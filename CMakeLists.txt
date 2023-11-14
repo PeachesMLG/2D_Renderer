@@ -6,6 +6,8 @@ set(CMAKE_CXX_STANDARD 23)
 add_subdirectory(dependencies/glad)
 add_subdirectory(dependencies/glfw)
 
-add_executable(2D_Renderer src/main.cpp)
+add_executable(2D_Renderer src/main.cpp
+        src/Test.cpp
+        src/Test.h)
 
 target_link_libraries(2D_Renderer PUBLIC glfw glad)
