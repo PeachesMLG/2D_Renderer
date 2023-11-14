@@ -1,6 +1,7 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
+#include "Test.h"
 
 void framebuffer_size_callback(GLFWwindow *window, int width, int height) {
     glViewport(0, 0, width, height);
@@ -35,10 +36,15 @@ int main() {
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
+    Test test;
+
     glClearColor(0.192156862745f, 0.180392156863f, 0.16862745098f, 1.0f);
     while (!glfwWindowShouldClose(window)) {
         double startTime = glfwGetTime();
         processInput(window);
+
+        TestStruct testStruct = {1};
+        test.Testing(testStruct);
 
         // Render Here
         glClear(GL_COLOR_BUFFER_BIT);
